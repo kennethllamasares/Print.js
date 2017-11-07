@@ -20,7 +20,7 @@ export default {
       font: 'TimesNewRoman',
       font_size: '12pt',
       honorMarginPadding: true,
-      honorColor: false,
+      honorColor: true,
       properties: null,
       gridHeaderStyle: 'font-weight: bold;',
       gridStyle: 'border: 1px solid lightgray; margin-bottom: -1px;',
@@ -54,6 +54,7 @@ export default {
         params.font = typeof args.font !== 'undefined' ? args.font : params.font
         params.font_size = typeof args.font_size !== 'undefined' ? args.font_size : params.font_size
         params.honorMarginPadding = typeof args.honorMarginPadding !== 'undefined' ? args.honorMarginPadding : params.honorMarginPadding
+        params.honorColor = typeof args.honorColor !== 'undefined' ? args.honorColor : params.honorColor
         params.properties = typeof args.properties !== 'undefined' ? args.properties : params.properties
         params.gridHeaderStyle = typeof args.gridHeaderStyle !== 'undefined' ? args.gridHeaderStyle : params.gridHeaderStyle
         params.gridStyle = typeof args.gridStyle !== 'undefined' ? args.gridStyle : params.gridStyle
