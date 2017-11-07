@@ -35,9 +35,13 @@ export function collectStyles (element, params) {
     }
 
     for (let i = 0; i < style.length; i++) {
-      for (let s = 0; s < targetStyles.length; s++) {
-        if (style[i].indexOf(targetStyles[s]) !== -1 || targetStyle.indexOf(style[i]) !== -1) {
-          elementStyle += style[i] + ':' + style.getPropertyValue(style[i]) + ';'
+      if (params.honorStyles) {
+        elementStyle += style[i] + ':' + style.getPropertyValue(style[i]) + ';'
+      } else {
+        for (let s = 0; s < targetStyles.length; s++) {
+          if (style[i].indexOf(targetStyles[s]) !== -1 || targetStyle.indexOf(style[i]) !== -1) {
+            elementStyle += style[i] + ':' + style.getPropertyValue(style[i]) + ';'
+          }
         }
       }
     }
